@@ -10,6 +10,13 @@ public class CarDTO {
     private String arrivalGoal;
     private String idLane;
 
+    public CarDTO(String idCar, String idDriver, String arrivalGoal, String idLane) {
+        this.idCar = idCar;
+        this.idDriver = idDriver;
+        this.arrivalGoal = arrivalGoal;
+        this.idLane = idLane;
+    }
+
     public String getIdCar() {
         return idCar;
     }

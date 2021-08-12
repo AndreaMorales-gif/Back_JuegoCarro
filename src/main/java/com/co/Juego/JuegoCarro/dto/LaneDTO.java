@@ -12,6 +12,15 @@ public class LaneDTO {
     private String actualPosition;
     private boolean finalDisplacement;
 
+    public LaneDTO(String idLane, String idCar, String idPlayer, String idTrack, String actualPosition, boolean finalDisplacement) {
+        this.idLane = idLane;
+        this.idCar = idCar;
+        this.idPlayer = idPlayer;
+        this.idTrack = idTrack;
+        this.actualPosition = actualPosition;
+        this.finalDisplacement = finalDisplacement;
+    }
+
     public String getIdLane() {
         return idLane;
     }

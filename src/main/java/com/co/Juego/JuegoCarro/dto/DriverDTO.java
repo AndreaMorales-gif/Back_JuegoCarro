@@ -10,6 +10,12 @@ public class DriverDTO {
     private String throwDice;
     private String idPlayer;
 
+    public DriverDTO(String idDriver, String throwDice, String idPlayer) {
+        this.idDriver = idDriver;
+        this.throwDice = throwDice;
+        this.idPlayer = idPlayer;
+    }
+
     public String getIdDriver() {
         return idDriver;
     }

@@ -11,6 +11,14 @@ public class PodiumDTO {
     private String secondPlace;
     private String thirdPlace;
 
+    public PodiumDTO(String idPodium, String idDriver, String firstPlace, String secondPlace, String thirdPlace) {
+        this.idPodium = idPodium;
+        this.idDriver = idDriver;
+        this.firstPlace = firstPlace;
+        this.secondPlace = secondPlace;
+        this.thirdPlace = thirdPlace;
+    }
+
     public String getIdPodium() {
         return idPodium;
     }

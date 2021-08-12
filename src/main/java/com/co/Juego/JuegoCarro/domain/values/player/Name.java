@@ -1,13 +1,11 @@
 package com.co.Juego.JuegoCarro.domain.values.player;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class Name {
-    private String name;
+    private final String value;
 
-    public Name(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }
