@@ -23,7 +23,7 @@ public class JugadorMapper {
             player.setSecondPlace(updatePlayer.getSecondPlace());
             player.setThirdPlace(updatePlayer.getThirdPlace());
             player.setIdGame(updatePlayer.getIdGame());
-            player.setIdCar(updatePlayer.getIdCar());
+            player.setIdDriver(updatePlayer.getIdDriver());
             return player;
         };
     }
@@ -36,7 +36,7 @@ public class JugadorMapper {
                 player.getSecondPlace(),
                 player.getThirdPlace(),
                 player.getIdGame(),
-                player.getIdCar()
+                player.getIdDriver()
         );
     }
 }

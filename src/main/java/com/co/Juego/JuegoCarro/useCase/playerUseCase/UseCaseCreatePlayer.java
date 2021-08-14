@@ -24,7 +24,7 @@ public class UseCaseCreatePlayer {
     }
 
 
-    public Mono<PlayerDTO> apply(PlayerDTO playerDTO){
+    public Mono<PlayerDTO> createPlayer(PlayerDTO playerDTO){
         Mono<PlayerDTO> respuesta=  repositoryPlayer
                 .save(jugadorMapper.mapperToPlayer(playerDTO.getIdPlayer())
                     .apply(playerDTO))

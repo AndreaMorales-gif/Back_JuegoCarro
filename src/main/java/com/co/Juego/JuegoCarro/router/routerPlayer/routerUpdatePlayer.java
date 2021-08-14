@@ -15,8 +15,8 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 @Configuration
 public class routerUpdatePlayer {
     @Bean
-    public RouterFunction<ServerResponse> modifyPlayer(UseCaseUpdatePlayer useCaseUpdatePlayer){
-        return route(PUT("/editPlayer").and(accept(MediaType.APPLICATION_JSON)),
+    public RouterFunction<ServerResponse> updatePlayer(UseCaseUpdatePlayer useCaseUpdatePlayer){
+        return route(PUT("/updatePlayer").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(PlayerDTO.class)
                         .flatMap(playerDTO -> useCaseUpdatePlayer.updatePlayer(playerDTO)
                                 .flatMap(result-> ServerResponse.ok()

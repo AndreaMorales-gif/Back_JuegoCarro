@@ -38,11 +38,11 @@ class UseCaseFindByIdPlayerTest {
         player.setSecondPlace(0);
         player.setThirdPlace(0);
         player.setIdGame("5");
-        player.setIdCar("10");
+        player.setIdDriver("10");
 
         when(repositoryPlayer.findById(Mockito.any(String.class))).thenReturn(Mono.just(player));
 
-        var response = useCaseFindByIdPlayer.findById(playerDTO.getIdPlayer());
+        var response = useCaseFindByIdPlayer.findByIdPlayer(playerDTO.getIdPlayer());
 
         Assertions.assertEquals(response.block().getIdPlayer(), "7");
     }

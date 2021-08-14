@@ -19,7 +19,7 @@ public class routerCreatePlayer {
     public RouterFunction<ServerResponse> createPlayer(UseCaseCreatePlayer useCaseCreatePlayer){
         return route(POST("/createPlayer").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(PlayerDTO.class)
-                        .flatMap(playerDTO -> useCaseCreatePlayer.apply(playerDTO)
+                        .flatMap(playerDTO -> useCaseCreatePlayer.createPlayer(playerDTO)
                                 .flatMap(result-> ServerResponse.ok()
                                         .contentType(MediaType.APPLICATION_JSON)
                                             .bodyValue(result))

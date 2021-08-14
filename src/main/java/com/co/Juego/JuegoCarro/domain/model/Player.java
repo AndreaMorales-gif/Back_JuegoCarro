@@ -27,7 +27,7 @@ public class Player {
     private Integer secondPlace;
     private Integer thirdPlace;
     private String idGame;
-    private String idCar;
+    private String idDriver;
 
 }
 

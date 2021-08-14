@@ -21,7 +21,7 @@ public class UseCaseFindByIdPlayer {
         this.jugadorMapper = jugadorMapper;
     }
 
-    public Mono<PlayerDTO> findById(String id) {
+    public Mono<PlayerDTO> findByIdPlayer(String id) {
         return repositoryPlayer.findById(id)
                 .flatMap(player ->
                         Mono.just(jugadorMapper.mapperToPlayerDTO().apply(player)));
