@@ -1,11 +1,6 @@
 package com.co.Juego.JuegoCarro.mapper;
 
 import com.co.Juego.JuegoCarro.domain.model.Player;
-import com.co.Juego.JuegoCarro.domain.values.car.IdCar;
-import com.co.Juego.JuegoCarro.domain.values.game.IdGame;
-import com.co.Juego.JuegoCarro.domain.values.player.IdPlayer;
-import com.co.Juego.JuegoCarro.domain.values.player.Name;
-import com.co.Juego.JuegoCarro.domain.values.player.QuantityWinner;
 import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import org.springframework.stereotype.Component;
 

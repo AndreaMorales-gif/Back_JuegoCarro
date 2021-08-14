@@ -34,7 +34,7 @@ class UseCaseUpdatePlayerTest {
         player.setSecondPlace(0);
         player.setThirdPlace(0);
         player.setIdGame("5");
-        player.setIdCar("7");
+        player.setIdDriver("7");
 
         when(repositoryPlayer.save(Mockito.any(Player.class))).thenReturn(Mono.just(player));
 
