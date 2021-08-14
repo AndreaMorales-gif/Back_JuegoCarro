@@ -37,8 +37,8 @@ class UseCaseCreatePlayerTest {
 
         when(repositoryPlayer.save(Mockito.any(Player.class))).thenReturn(Mono.just(player));
 
-        var respuesta = useCaseCreatePlayer.apply(playerDTO);
+        var response = useCaseCreatePlayer.apply(playerDTO);
 
-        Assertions.assertEquals(respuesta.block(), playerDTO);
+        Assertions.assertEquals(response.block(), playerDTO);
     }
 }
