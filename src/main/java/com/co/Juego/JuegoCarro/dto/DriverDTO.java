@@ -1,42 +1,21 @@
 package com.co.Juego.JuegoCarro.dto;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Document
 public class DriverDTO {
-
+    @Id
     private String idDriver;
-
     // @NotBlank
     private String throwDice;
     private String idPlayer;
 
-    public DriverDTO(String idDriver, String throwDice, String idPlayer) {
-        this.idDriver = idDriver;
-        this.throwDice = throwDice;
-        this.idPlayer = idPlayer;
-    }
-
-    public String getIdDriver() {
-        return idDriver;
-    }
-
-    public void setIdDriver(String idDriver) {
-        this.idDriver = idDriver;
-    }
-
-    public String getThrowDice() {
-        return throwDice;
-    }
-
-    public void setThrowDice(String throwDice) {
-        this.throwDice = throwDice;
-    }
-
-    public String getIdPlayer() {
-        return idPlayer;
-    }
-
-    public void setIdPlayer(String idPlayer) {
-        this.idPlayer = idPlayer;
-    }
 }

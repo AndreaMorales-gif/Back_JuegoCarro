@@ -1,15 +1,18 @@
 package com.co.Juego.JuegoCarro.domain.values.car;
 
+import com.co.Juego.JuegoCarro.domain.values.player.IdPlayer;
+import lombok.AllArgsConstructor;
+
 import java.util.UUID;
 
+@AllArgsConstructor
 public class IdCar {
-    private UUID id;
+    private final String value;
 
-    public IdCar(UUID id) {
-        this.id = id;
+    public static IdCar of(String value){
+        return  new IdCar(value);
     }
-
-    public String getId() {
-        return id.toString();
+    public String getValue(){
+        return this.value;
     }
 }

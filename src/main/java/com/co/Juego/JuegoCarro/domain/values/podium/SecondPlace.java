@@ -1,13 +1,10 @@
 package com.co.Juego.JuegoCarro.domain.values.podium;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class SecondPlace {
     private String secondPlace;
-
-    public SecondPlace(String secondPlace) {
-        this.secondPlace = secondPlace;
-    }
-
-    public String getSecondPlace() {
-        return secondPlace;
-    }
 }

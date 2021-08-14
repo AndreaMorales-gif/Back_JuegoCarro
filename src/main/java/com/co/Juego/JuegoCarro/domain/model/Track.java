@@ -2,9 +2,16 @@ package com.co.Juego.JuegoCarro.domain.model;
 
 import com.co.Juego.JuegoCarro.domain.values.track.Distance;
 import com.co.Juego.JuegoCarro.domain.values.track.IdTrack;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Getter
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Document
 public class Track {
     //Pista
@@ -14,19 +21,4 @@ public class Track {
 
     private Distance distance;
 
-    public IdTrack getIdTrack() {
-        return idTrack;
-    }
-
-    public void setIdTrack(IdTrack idTrack) {
-        this.idTrack = idTrack;
-    }
-
-    public Distance getDistance() {
-        return distance;
-    }
-
-    public void setDistance(Distance distance) {
-        this.distance = distance;
-    }
 }

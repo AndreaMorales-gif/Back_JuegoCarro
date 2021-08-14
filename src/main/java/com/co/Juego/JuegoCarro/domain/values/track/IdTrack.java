@@ -1,15 +1,18 @@
 package com.co.Juego.JuegoCarro.domain.values.track;
 
+import com.co.Juego.JuegoCarro.domain.values.podium.IdPodium;
+import lombok.AllArgsConstructor;
+
 import java.util.UUID;
 
+@AllArgsConstructor
 public class IdTrack {
-    private UUID id;
+    private final String value;
 
-    public IdTrack(UUID id) {
-        this.id = id;
+    public static IdTrack of(String value){
+        return  new IdTrack(value);
     }
-
-    public String getId() {
-        return id.toString();
+    public String getValue(){
+        return this.value;
     }
 }

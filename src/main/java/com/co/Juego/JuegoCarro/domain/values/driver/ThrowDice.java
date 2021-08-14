@@ -1,14 +1,12 @@
 package com.co.Juego.JuegoCarro.domain.values.driver;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class ThrowDice {
     //lanzarDado
-    private String throwDice;
+    private Integer throwDice;
 
-    public ThrowDice(String throwDice) {
-        this.throwDice = throwDice;
-    }
-
-    public String getThrowDice() {
-        return throwDice;
-    }
 }

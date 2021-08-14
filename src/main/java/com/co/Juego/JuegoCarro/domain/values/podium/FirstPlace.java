@@ -1,13 +1,10 @@
 package com.co.Juego.JuegoCarro.domain.values.podium;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class FirstPlace {
     private String firstPlace;
-
-    public FirstPlace(String firstPlace) {
-        this.firstPlace = firstPlace;
-    }
-
-    public String getFirstPlace() {
-        return firstPlace;
-    }
 }

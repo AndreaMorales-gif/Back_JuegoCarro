@@ -1,13 +1,11 @@
 package com.co.Juego.JuegoCarro.domain.values;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public class GameState {
     private Boolean gameState;
 
-    public GameState(Boolean gameState) {
-        this.gameState = gameState;
-    }
-
-    public Boolean getGameState() {
-        return gameState;
-    }
 }

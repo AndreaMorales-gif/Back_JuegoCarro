@@ -1,6 +1,8 @@
 package com.co.Juego.JuegoCarro.mapper;
 
 import com.co.Juego.JuegoCarro.domain.model.Player;
+import com.co.Juego.JuegoCarro.domain.values.car.IdCar;
+import com.co.Juego.JuegoCarro.domain.values.game.IdGame;
 import com.co.Juego.JuegoCarro.domain.values.player.IdPlayer;
 import com.co.Juego.JuegoCarro.domain.values.player.Name;
 import com.co.Juego.JuegoCarro.domain.values.player.QuantityWinner;
@@ -13,23 +15,28 @@ import java.util.function.Function;
 public class JugadorMapper {
 
     public Function<PlayerDTO, Player> mapperToPlayer(String id){
-        return updatePlayer -> new Player(
-                IdPlayer.of(id),
-                new Name(updatePlayer.getName()),
-                new QuantityWinner(updatePlayer.getFirstPlace()),
-                new QuantityWinner(updatePlayer.getSecondPlace()),
-                new QuantityWinner(updatePlayer.getThirdPlace())
-                );
-
+        return updatePlayer -> {
+            var player = new Player();
+            player.setIdPlayer(id);
+            player.setName(updatePlayer.getName());
+            player.setFirstPlace(updatePlayer.getFirstPlace());
+            player.setSecondPlace(updatePlayer.getSecondPlace());
+            player.setThirdPlace(updatePlayer.getThirdPlace());
+            player.setIdGame(updatePlayer.getIdGame());
+            player.setIdCar(updatePlayer.getIdCar());
+            return player;
+        };
     }
 
     public Function<Player, PlayerDTO> mapperToPlayerDTO(){
         return player -> new PlayerDTO(
-                player.getIdPlayer().getValue(),
-                player.getName().getValue(),
-                player.getFirstPlace().getValue(),
-                player.getSecondPlace().getValue(),
-                player.getThirdPlace().getValue()
+                player.getIdPlayer(),
+                player.getName(),
+                player.getFirstPlace(),
+                player.getSecondPlace(),
+                player.getThirdPlace(),
+                player.getIdGame(),
+                player.getIdCar()
         );
     }
 }

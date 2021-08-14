@@ -1,15 +1,18 @@
 package com.co.Juego.JuegoCarro.domain.values.lane;
 
+import com.co.Juego.JuegoCarro.domain.values.game.IdGame;
+import lombok.AllArgsConstructor;
+
 import java.util.UUID;
 
+@AllArgsConstructor
 public class IdLane {
-    private UUID id;
+    private final String value;
 
-    public IdLane(UUID id) {
-        this.id = id;
+    public static IdLane of(String value){
+        return  new IdLane(value);
     }
-
-    public String getId() {
-        return id.toString();
+    public String getValue(){
+        return this.value;
     }
 }
