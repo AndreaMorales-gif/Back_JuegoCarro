@@ -1,12 +1,8 @@
 package com.co.Juego.JuegoCarro.useCase.carUseCase;
 
 import com.co.Juego.JuegoCarro.domain.model.Car;
-import com.co.Juego.JuegoCarro.domain.model.Player;
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import com.co.Juego.JuegoCarro.repositories.RepositoryCar;
-import com.co.Juego.JuegoCarro.repositories.RepositoryPlayer;
-import com.co.Juego.JuegoCarro.useCase.playerUseCase.UseCaseFindByIdPlayer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -9,21 +9,22 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
+import org.springframework.test.context.ContextConfiguration;
 import reactor.core.publisher.Mono;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class UseCaseCreateDriverTest {
-
+class UseCaseFindByIdDriverTest {
     @SpyBean
-    UseCaseCreateDriver useCaseCreateDriver;
+    UseCaseFindByIdDriver useCaseFindByIdDriver;
 
     @MockBean
     RepositoryDriver repositoryDriver;
 
     @Test
-    void createDriver(){
+    void findByIdDriver(){
         var driverDTO = new DriverDTO("4",6 ,"8","9","1");
         var driver = new Driver();
         driver.setIdDriver("4");
@@ -32,10 +33,11 @@ class UseCaseCreateDriverTest {
         driver.setIdCar("9");
         driver.setIdPlayer("1");
 
-        when(repositoryDriver.save(Mockito.any(Driver.class))).thenReturn(Mono.just(driver));
+        when(repositoryDriver.findById(Mockito.any(String.class))).thenReturn(Mono.just(driver));
 
-        var response = useCaseCreateDriver.createDriver(driverDTO);
+        var response = useCaseFindByIdDriver.findByIdDriver(driverDTO.getIdDriver());
 
-        Assertions.assertEquals(response.block(), driverDTO);
+        Assertions.assertEquals(response.block().getIdDriver(), "4");
     }
+
 }

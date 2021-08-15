@@ -3,6 +3,7 @@ package com.co.Juego.JuegoCarro.useCase.driverUseCase;
 import com.co.Juego.JuegoCarro.dto.DriverDTO;
 import com.co.Juego.JuegoCarro.mapper.ConductorMapper;
 import com.co.Juego.JuegoCarro.repositories.RepositoryDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import reactor.core.publisher.Mono;
@@ -13,7 +14,7 @@ public class UseCaseUpdateDriver {
 
     private final RepositoryDriver repositoryDriver;
     private final ConductorMapper conductorMapper;
-
+    @Autowired
     public UseCaseUpdateDriver(RepositoryDriver repositoryDriver, ConductorMapper conductorMapper) {
         this.repositoryDriver = repositoryDriver;
         this.conductorMapper = conductorMapper;

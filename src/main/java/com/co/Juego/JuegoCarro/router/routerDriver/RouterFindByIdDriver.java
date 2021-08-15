@@ -1,8 +1,7 @@
-package com.co.Juego.JuegoCarro.router.routerCar;
+package com.co.Juego.JuegoCarro.router.routerDriver;
 
-import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindByIdCarUseCase;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindCarsByIdDriverUseCase;
+import com.co.Juego.JuegoCarro.dto.DriverDTO;
+import com.co.Juego.JuegoCarro.useCase.driverUseCase.UseCaseFindByIdDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -15,13 +14,14 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class RouterFindCarsByIdDriverUseCase {
+public class RouterFindByIdDriver {
     @Bean
-    public RouterFunction<ServerResponse> findCarsByIdDriver(FindCarsByIdDriverUseCase findCarsByIdDriverUseCase){
-        return route(GET("/getIdDriver/{idDriver}").and(accept(MediaType.APPLICATION_JSON)),
+    public RouterFunction<ServerResponse> findByIdDriver(UseCaseFindByIdDriver useCaseFindByIdDriver){
+        return route(
+                GET("/getIdDriver/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromPublisher(findCarsByIdDriverUseCase.findCarsByIdDriver(request.pathVariable("idDriver")), CarDTO.class))
+                        .body(BodyInserters.fromPublisher(useCaseFindByIdDriver.findByIdDriver(request.pathVariable("id")), DriverDTO.class))
         );
     }
 }

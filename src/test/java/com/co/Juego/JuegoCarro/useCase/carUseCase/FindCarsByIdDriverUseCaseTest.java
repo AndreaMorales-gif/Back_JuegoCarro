@@ -1,12 +1,8 @@
 package com.co.Juego.JuegoCarro.useCase.carUseCase;
 
 import com.co.Juego.JuegoCarro.domain.model.Car;
-import com.co.Juego.JuegoCarro.domain.model.Player;
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import com.co.Juego.JuegoCarro.repositories.RepositoryCar;
-import com.co.Juego.JuegoCarro.repositories.RepositoryPlayer;
-import com.co.Juego.JuegoCarro.useCase.playerUseCase.UseCaseFindByIdGamePlayer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -15,7 +11,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import reactor.core.publisher.Flux;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
