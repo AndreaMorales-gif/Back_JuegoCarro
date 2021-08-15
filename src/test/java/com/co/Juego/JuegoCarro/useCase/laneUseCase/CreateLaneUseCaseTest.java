@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 class CreateLaneUseCaseTest {
 
     @SpyBean
-    CreateLaneUseCase createLaneUseCase;
+    UseCaseCreateLane createLaneUseCase;
 
     @MockBean
     RepositoryLane repositoryLane;

@@ -1,9 +1,7 @@
 package com.co.Juego.JuegoCarro.router.routerCar;
 
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.dto.PlayerDTO;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindByIdCarUseCase;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.UpdateCarUseCase;
+import com.co.Juego.JuegoCarro.useCase.carUseCase.UseCaseFindByIdCar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -18,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RrouterFindByIdCar {
     @Bean
-    public RouterFunction<ServerResponse> findByIdCar(FindByIdCarUseCase findByIdCarUseCase){
+    public RouterFunction<ServerResponse> findByIdCar(UseCaseFindByIdCar findByIdCarUseCase){
         return route(GET("/getIdCar/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

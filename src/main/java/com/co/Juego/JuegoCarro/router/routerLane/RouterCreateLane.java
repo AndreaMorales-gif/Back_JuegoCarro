@@ -1,6 +1,6 @@
 package com.co.Juego.JuegoCarro.router.routerLane;
 import com.co.Juego.JuegoCarro.dto.LaneDTO;
-import com.co.Juego.JuegoCarro.useCase.laneUseCase.CreateLaneUseCase;
+import com.co.Juego.JuegoCarro.useCase.laneUseCase.UseCaseCreateLane;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -14,7 +14,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterCreateLane {
     @Bean
-    public RouterFunction<ServerResponse> createLane(CreateLaneUseCase createLaneUseCase){
+    public RouterFunction<ServerResponse> createLane(UseCaseCreateLane createLaneUseCase){
         return route(POST("/createLane").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(LaneDTO.class)
                         .flatMap(laneDTO -> createLaneUseCase.createLane(laneDTO)

@@ -1,8 +1,7 @@
 package com.co.Juego.JuegoCarro.router.routerCar;
 
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.CreateCarUseCase;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.UpdateCarUseCase;
+import com.co.Juego.JuegoCarro.useCase.carUseCase.UseCaseUpdateCar;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -16,7 +15,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterUpdateCar {
     @Bean
-    public RouterFunction<ServerResponse> updateCar(UpdateCarUseCase updateCarUseCase){
+    public RouterFunction<ServerResponse> updateCar(UseCaseUpdateCar updateCarUseCase){
         return route(PUT("/updateCar").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(CarDTO.class)
                         .flatMap(carDTO -> updateCarUseCase.updateCar(carDTO)

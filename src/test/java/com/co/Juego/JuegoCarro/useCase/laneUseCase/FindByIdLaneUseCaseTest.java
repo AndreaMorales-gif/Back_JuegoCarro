@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 class FindByIdLaneUseCaseTest {
 
     @SpyBean
-    FindByIdLaneUseCase findByIdLaneUseCase;
+    UseCaseFindByIdLane findByIdLaneUseCase;
 
     @MockBean
     RepositoryLane repositoryLane;

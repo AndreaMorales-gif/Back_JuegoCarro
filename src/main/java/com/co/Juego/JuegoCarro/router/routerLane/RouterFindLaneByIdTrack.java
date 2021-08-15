@@ -1,9 +1,7 @@
 package com.co.Juego.JuegoCarro.router.routerLane;
 
-import com.co.Juego.JuegoCarro.dto.CarDTO;
 import com.co.Juego.JuegoCarro.dto.LaneDTO;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindCarsByIdDriverUseCase;
-import com.co.Juego.JuegoCarro.useCase.laneUseCase.FindLaneByIdTrackUseCase;
+import com.co.Juego.JuegoCarro.useCase.laneUseCase.UseCaseFindLaneByIdTrack;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -18,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterFindLaneByIdTrack {
     @Bean
-    public RouterFunction<ServerResponse> findLeanByIdDriver(FindLaneByIdTrackUseCase findLaneByIdTrackUseCase){
+    public RouterFunction<ServerResponse> findLeanByIdDriver(UseCaseFindLaneByIdTrack findLaneByIdTrackUseCase){
         return route(GET("/getIdTrack/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

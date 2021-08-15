@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 class FindByIdCarUseCaseTest {
     @SpyBean
-    FindByIdCarUseCase findByIdCarUseCase;
+    UseCaseFindByIdCar findByIdCarUseCase;
 
     @MockBean
     RepositoryCar repositoryCar;

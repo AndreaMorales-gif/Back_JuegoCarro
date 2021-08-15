@@ -11,14 +11,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 import reactor.core.publisher.Flux;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class FindLaneByIdTrackUseCaseTest {
 
     @SpyBean
-    FindLaneByIdTrackUseCase findLaneByIdTrackUseCase;
+    UseCaseFindLaneByIdTrack findLaneByIdTrackUseCase;
 
     @MockBean
     RepositoryLane repositoryLane;

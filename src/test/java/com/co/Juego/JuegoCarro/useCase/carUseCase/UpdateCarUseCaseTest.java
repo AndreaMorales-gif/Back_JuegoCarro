@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 class UpdateCarUseCaseTest {
     @SpyBean
-    UpdateCarUseCase updateCarUseCase;
+    UseCaseUpdateCar updateCarUseCase;
 
     @MockBean
     RepositoryCar repositoryCar;

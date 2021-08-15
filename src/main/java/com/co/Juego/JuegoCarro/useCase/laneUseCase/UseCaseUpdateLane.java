@@ -10,12 +10,12 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class UpdateLaneUseCase {
+public class UseCaseUpdateLane {
     private final RepositoryLane repositoryLane;
     private final CarrilMapper carrilMapper;
 
     @Autowired
-    public UpdateLaneUseCase(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
+    public UseCaseUpdateLane(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
         this.repositoryLane = repositoryLane;
         this.carrilMapper = carrilMapper;
     }

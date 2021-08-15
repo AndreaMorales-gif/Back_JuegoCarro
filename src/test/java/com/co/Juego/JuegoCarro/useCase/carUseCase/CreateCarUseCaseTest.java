@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 class CreateCarUseCaseTest {
 
     @SpyBean
-    CreateCarUseCase createCarUseCase;
+    UseCaseCreateCar createCarUseCase;
 
     @MockBean
     RepositoryCar repositoryCar;

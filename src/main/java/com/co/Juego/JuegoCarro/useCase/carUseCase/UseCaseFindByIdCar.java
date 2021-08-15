@@ -1,8 +1,11 @@
 package com.co.Juego.JuegoCarro.useCase.carUseCase;
 
 import com.co.Juego.JuegoCarro.dto.CarDTO;
+import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import com.co.Juego.JuegoCarro.mapper.CarroMapper;
+import com.co.Juego.JuegoCarro.mapper.JugadorMapper;
 import com.co.Juego.JuegoCarro.repositories.RepositoryCar;
+import com.co.Juego.JuegoCarro.repositories.RepositoryPlayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -10,21 +13,19 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class UpdateCarUseCase {
+public class UseCaseFindByIdCar {
 
     private final RepositoryCar repositoryCar;
     private final CarroMapper carroMapper;
 
     @Autowired
-    public UpdateCarUseCase(RepositoryCar repositoryCar, CarroMapper carroMapper) {
+    public UseCaseFindByIdCar(RepositoryCar repositoryCar, CarroMapper carroMapper) {
         this.repositoryCar = repositoryCar;
         this.carroMapper = carroMapper;
     }
 
-    public Mono<CarDTO> updateCar(CarDTO carDTO) {
-        return repositoryCar
-                .save(carroMapper.mapperToCar(carDTO.getIdCar())
-                        .apply(carDTO))
+    public Mono<CarDTO> findByIdCar(String id) {
+        return repositoryCar.findById(id)
                 .map(carroMapper.mappertoCarDTO());
     }
 }

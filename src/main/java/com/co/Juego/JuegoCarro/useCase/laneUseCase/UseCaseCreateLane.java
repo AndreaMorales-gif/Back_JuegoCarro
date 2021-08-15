@@ -10,19 +10,19 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class FindByIdLaneUseCase {
+public class UseCaseCreateLane {
     private final RepositoryLane repositoryLane;
     private final CarrilMapper carrilMapper;
 
     @Autowired
-    public FindByIdLaneUseCase(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
+    public UseCaseCreateLane(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
         this.repositoryLane = repositoryLane;
         this.carrilMapper = carrilMapper;
     }
 
-    public Mono<LaneDTO> findById(String id){
-        return repositoryLane.findById(id)
-                .map(carrilMapper.mapperToLaneDTO());
-
+    public Mono<LaneDTO> createLane(LaneDTO laneDTO){
+        return repositoryLane.save(carrilMapper.mapperToLane(laneDTO.getIdLane())
+                        .apply(laneDTO))
+                            .map(carrilMapper.mapperToLaneDTO());
     }
 }

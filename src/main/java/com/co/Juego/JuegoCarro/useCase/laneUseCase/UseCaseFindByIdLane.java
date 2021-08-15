@@ -6,24 +6,23 @@ import com.co.Juego.JuegoCarro.repositories.RepositoryLane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
-import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 @Validated
-public class FindLaneByIdTrackUseCase {
+public class UseCaseFindByIdLane {
     private final RepositoryLane repositoryLane;
     private final CarrilMapper carrilMapper;
 
     @Autowired
-    public FindLaneByIdTrackUseCase(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
+    public UseCaseFindByIdLane(RepositoryLane repositoryLane, CarrilMapper carrilMapper) {
         this.repositoryLane = repositoryLane;
         this.carrilMapper = carrilMapper;
     }
 
-    public Flux<LaneDTO> findLaneByTrackId(String id){
-        return repositoryLane.findByIdTrack(id)
-                .flatMap(
-                        rail -> Flux.just(carrilMapper.mapperToLaneDTO().apply(rail))
-                );
+    public Mono<LaneDTO> findById(String id){
+        return repositoryLane.findById(id)
+                .map(carrilMapper.mapperToLaneDTO());
+
     }
 }

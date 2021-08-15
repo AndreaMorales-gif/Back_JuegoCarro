@@ -1,8 +1,7 @@
 package com.co.Juego.JuegoCarro.router.routerCar;
 
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindByIdCarUseCase;
-import com.co.Juego.JuegoCarro.useCase.carUseCase.FindCarsByIdDriverUseCase;
+import com.co.Juego.JuegoCarro.useCase.carUseCase.UseCaseFindCarsByIdDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -17,7 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterFindCarsByIdDriverUseCase {
     @Bean
-    public RouterFunction<ServerResponse> findCarsByIdDriver(FindCarsByIdDriverUseCase findCarsByIdDriverUseCase){
+    public RouterFunction<ServerResponse> findCarsByIdDriver(UseCaseFindCarsByIdDriver findCarsByIdDriverUseCase){
         return route(GET("/getIdDriver/{idDriver}").and(accept(MediaType.APPLICATION_JSON)),
                 request-> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)

@@ -1,8 +1,6 @@
 package com.co.Juego.JuegoCarro.router.routerLane;
-import com.co.Juego.JuegoCarro.dto.DriverDTO;
 import com.co.Juego.JuegoCarro.dto.LaneDTO;
-import com.co.Juego.JuegoCarro.useCase.driverUseCase.UseCaseUpdateDriver;
-import com.co.Juego.JuegoCarro.useCase.laneUseCase.UpdateLaneUseCase;
+import com.co.Juego.JuegoCarro.useCase.laneUseCase.UseCaseUpdateLane;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -16,7 +14,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterUpdateLane {
     @Bean
-    public RouterFunction<ServerResponse> updateLane(UpdateLaneUseCase updateLaneUseCase){
+    public RouterFunction<ServerResponse> updateLane(UseCaseUpdateLane updateLaneUseCase){
         return route(PUT("/updateLane").and(accept(MediaType.APPLICATION_JSON)),
                 request -> request.bodyToMono(LaneDTO.class)
                         .flatMap(laneDTO -> updateLaneUseCase.updateLane(laneDTO)
