@@ -1,11 +1,8 @@
 package com.co.Juego.JuegoCarro.useCase.driverUseCase;
 
 import com.co.Juego.JuegoCarro.domain.model.Driver;
-import com.co.Juego.JuegoCarro.domain.model.Player;
 import com.co.Juego.JuegoCarro.dto.DriverDTO;
 import com.co.Juego.JuegoCarro.repositories.RepositoryDriver;
-import com.co.Juego.JuegoCarro.repositories.RepositoryPlayer;
-import com.co.Juego.JuegoCarro.useCase.playerUseCase.UseCaseCreatePlayer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -18,16 +15,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class UseCaseCreateDriverTest {
+class UseCaseUpdateDriverTest {
 
     @SpyBean
-    UseCaseCreateDriver useCaseCreateDriver;
+    UseCaseUpdateDriver useCaseUpdateDriver;
 
     @MockBean
     RepositoryDriver repositoryDriver;
 
     @Test
-    void createDriver(){
+    void updateDriver(){
         var driverDTO = new DriverDTO("4",6 ,"8","9","1");
         var driver = new Driver();
         driver.setIdDriver("4");
@@ -38,7 +35,7 @@ class UseCaseCreateDriverTest {
 
         when(repositoryDriver.save(Mockito.any(Driver.class))).thenReturn(Mono.just(driver));
 
-        var response = useCaseCreateDriver.createDriver(driverDTO);
+        var response = useCaseUpdateDriver.updateDriver(driverDTO);
 
         Assertions.assertEquals(response.block(), driverDTO);
     }

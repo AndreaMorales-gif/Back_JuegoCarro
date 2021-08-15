@@ -26,7 +26,7 @@ class FindByIdCarUseCaseTest {
     RepositoryCar repositoryCar;
 
     @Test
-    void findByIdPlayer() {
+    void findByIdCar() {
         var carDTO = new CarDTO("8", "5", "9", "2", true, 5, 5);
         var car = new Car();
         car.setIdCar("8");
