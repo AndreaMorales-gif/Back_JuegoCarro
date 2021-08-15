@@ -16,6 +16,7 @@ import java.util.function.Predicate;
 public class PlayerDTO  {
     @Id
     private String idPlayer;
+
     private String name;
     private Integer firstPlace;
     private Integer secondPlace;

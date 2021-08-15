@@ -11,7 +11,7 @@ public class CarroMapper {
     public Function<CarDTO, Car> mapperToCar(String id) {
         return updateCar -> {
             Car car = new Car();
-            car.setIdCar(updateCar.getIdCar());
+            car.setIdCar(id);
             car.setDesiredDistance(updateCar.getDesiredDistance());
             car.setActualPosition(updateCar.getActualPosition());
             car.setTravelDistance(updateCar.getTravelDistance());

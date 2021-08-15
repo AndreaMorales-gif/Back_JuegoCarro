@@ -1,9 +1,5 @@
 package com.co.Juego.JuegoCarro.domain.model;
 
-import com.co.Juego.JuegoCarro.domain.values.car.ArrivalGoal;
-import com.co.Juego.JuegoCarro.domain.values.car.IdCar;
-import com.co.Juego.JuegoCarro.domain.values.driver.IdDriver;
-import com.co.Juego.JuegoCarro.domain.values.lane.IdLane;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +19,7 @@ public class Car {
     private String idDriver;
     private String idLane;
     private String idGame;
-    private Boolean desiredDistance; //distancia deseada
-    private Integer travelDistance; //distancia recorrida
+    private Boolean desiredDistance;
+    private Integer travelDistance;
     private Integer actualPosition;
 }

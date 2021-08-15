@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class DriverDTO {
     @Id
     private String idDriver;
-    // @NotBlank
+
     private Integer driverPosition;
     private String idLane;
     private String idCar;

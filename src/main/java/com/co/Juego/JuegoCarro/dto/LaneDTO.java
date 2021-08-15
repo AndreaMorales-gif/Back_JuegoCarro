@@ -1,22 +1,23 @@
 package com.co.Juego.JuegoCarro.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Getter
+@Setter
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Document
 public class LaneDTO {
+    @Id
     private String idLane;
-    // @NotBlank
+
     private String idCar;
-    private String idPlayer;
+    private String idDriver;
     private String idTrack;
-    private String actualPosition;
-    private boolean finalDisplacement;
+    private String idGame;
 
 }

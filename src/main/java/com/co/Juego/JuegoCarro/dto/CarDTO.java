@@ -13,12 +13,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CarDTO {
     @Id
     private String idCar;
-    // @NotBlank
+
     private String idDriver;
     private String idLane;
     private String idGame;
-    private Boolean desiredDistance; //distancia deseada
-    private Integer travelDistance; //distancia recorrida
+    private Boolean desiredDistance;
+    private Integer travelDistance;
     private Integer actualPosition;
 
 }

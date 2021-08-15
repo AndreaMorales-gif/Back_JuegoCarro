@@ -1,24 +1,25 @@
-package com.co.Juego.JuegoCarro.router.routerDriver;
-
+package com.co.Juego.JuegoCarro.router.routerLane;
 import com.co.Juego.JuegoCarro.dto.DriverDTO;
-import com.co.Juego.JuegoCarro.useCase.driverUseCase.UseCaseCreateDriver;
+import com.co.Juego.JuegoCarro.dto.LaneDTO;
+import com.co.Juego.JuegoCarro.useCase.driverUseCase.UseCaseUpdateDriver;
+import com.co.Juego.JuegoCarro.useCase.laneUseCase.UpdateLaneUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
+import static org.springframework.web.reactive.function.server.RequestPredicates.PUT;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class RouterCreateDriver {
+public class RouterUpdateLane {
     @Bean
-    public RouterFunction<ServerResponse> createDriver(UseCaseCreateDriver useCaseCreateDriver){
-        return route(POST("/createDriver").and(accept(MediaType.APPLICATION_JSON)),
-                request -> request.bodyToMono(DriverDTO.class)
-                        .flatMap(driverDTO -> useCaseCreateDriver.createDriver(driverDTO)
+    public RouterFunction<ServerResponse> updateLane(UpdateLaneUseCase updateLaneUseCase){
+        return route(PUT("/updateLane").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(LaneDTO.class)
+                        .flatMap(laneDTO -> updateLaneUseCase.updateLane(laneDTO)
                                 .flatMap(result-> ServerResponse.ok()
                                         .contentType(MediaType.APPLICATION_JSON)
                                         .bodyValue(result))
