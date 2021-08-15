@@ -1,12 +1,12 @@
 package com.co.Juego.JuegoCarro.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Getter
+@Setter
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
@@ -15,7 +15,9 @@ public class DriverDTO {
     @Id
     private String idDriver;
     // @NotBlank
-    private String throwDice;
+    private Integer driverPosition;
+    private String idLane;
+    private String idCar;
     private String idPlayer;
 
 }

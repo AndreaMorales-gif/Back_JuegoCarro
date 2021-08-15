@@ -14,7 +14,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 @Configuration
-public class routerFindByIdGamePlayer {
+public class RouterFindByIdGamePlayer {
 
     @Bean
     public RouterFunction<ServerResponse> findPlayersByGameId(UseCaseFindByIdGamePlayer useCaseFindByIdGamePlayer){

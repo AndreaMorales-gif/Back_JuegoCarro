@@ -13,7 +13,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 
 @Configuration
-public class routerCreatePlayer {
+public class RouterCreatePlayer {
 
     @Bean
     public RouterFunction<ServerResponse> createPlayer(UseCaseCreatePlayer useCaseCreatePlayer){

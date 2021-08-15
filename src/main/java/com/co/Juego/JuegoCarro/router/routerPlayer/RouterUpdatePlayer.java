@@ -13,7 +13,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 @Configuration
-public class routerUpdatePlayer {
+public class RouterUpdatePlayer {
     @Bean
     public RouterFunction<ServerResponse> updatePlayer(UseCaseUpdatePlayer useCaseUpdatePlayer){
         return route(PUT("/updatePlayer").and(accept(MediaType.APPLICATION_JSON)),

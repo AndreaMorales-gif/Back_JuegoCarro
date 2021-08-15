@@ -15,7 +15,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
-public class routerFindCarsByIdDriverUseCase {
+public class RouterFindCarsByIdDriverUseCase {
     @Bean
     public RouterFunction<ServerResponse> findByIdDriver(FindCarsByIdDriverUseCase findCarsByIdDriverUseCase){
         return route(GET("/getIdDriver/{idDriver}").and(accept(MediaType.APPLICATION_JSON)),
