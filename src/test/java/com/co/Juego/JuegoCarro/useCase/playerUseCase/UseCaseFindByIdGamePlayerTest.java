@@ -17,6 +17,7 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class UseCaseFindByIdGamePlayerTest {
+
     @SpyBean
     UseCaseFindByIdGamePlayer useCaseFindByIdGamePlayer;
 
@@ -24,7 +25,7 @@ class UseCaseFindByIdGamePlayerTest {
     RepositoryPlayer repositoryPlayer;
 
     @Test
-    void findByIdPlayer() {
+    void findByIdGame() {
         var playerDTO = new PlayerDTO("7","Carlos",0,0,0,"5","7");
         var player = new Player();
         player.setIdPlayer("7");
