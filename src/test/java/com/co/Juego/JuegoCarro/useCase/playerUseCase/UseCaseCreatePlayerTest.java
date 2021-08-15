@@ -18,8 +18,10 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class UseCaseCreatePlayerTest {
+
     @SpyBean
     UseCaseCreatePlayer useCaseCreatePlayer;
+
     @MockBean
     RepositoryPlayer repositoryPlayer;
 

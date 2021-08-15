@@ -1,9 +1,7 @@
 package com.co.Juego.JuegoCarro.useCase.carUseCase;
 
 import com.co.Juego.JuegoCarro.domain.model.Car;
-import com.co.Juego.JuegoCarro.domain.model.Player;
 import com.co.Juego.JuegoCarro.dto.CarDTO;
-import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import com.co.Juego.JuegoCarro.repositories.RepositoryCar;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,16 +15,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-class CreateCarUseCaseTest {
-
+class UpdateCarUseCaseTest {
     @SpyBean
-    CreateCarUseCase createCarUseCase;
+    UpdateCarUseCase updateCarUseCase;
 
     @MockBean
     RepositoryCar repositoryCar;
 
     @Test
-    void createCar(){
+    void updateCar(){
         var carDTO = new CarDTO("8", "5", "9", "2", true, 5, 5);
         var car = new Car();
         car.setIdCar("8");
@@ -40,9 +37,10 @@ class CreateCarUseCaseTest {
 
         when(repositoryCar.save(Mockito.any(Car.class))).thenReturn(Mono.just(car));
 
-        var response = createCarUseCase.createCar(carDTO);
+        var response = updateCarUseCase.updateCar(carDTO);
 
         Assertions.assertEquals(response.block(), carDTO);
 
     }
+
 }

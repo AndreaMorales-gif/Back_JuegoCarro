@@ -24,7 +24,7 @@ public class UseCaseUpdatePlayer {
         return  repositoryPlayer
                 .save(jugadorMapper.mapperToPlayer(playerDTO.getIdPlayer())
                         .apply(playerDTO))
-                .map(jugadorMapper.mapperToPlayerDTO());
+                              .map(jugadorMapper.mapperToPlayerDTO());
     }
 
 }
