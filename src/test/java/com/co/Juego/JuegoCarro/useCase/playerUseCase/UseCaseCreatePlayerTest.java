@@ -16,7 +16,6 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class UseCaseCreatePlayerTest {
-
     @SpyBean
     UseCaseCreatePlayer useCaseCreatePlayer;
 
@@ -25,15 +24,12 @@ class UseCaseCreatePlayerTest {
 
     @Test
     void createPlayer(){
-        var playerDTO = new PlayerDTO("7", "Carlos", 0, 0, 0, "5", "7");
+        var playerDTO = new PlayerDTO("7", "Carlos",  "5",2 );
         var player = new Player();
         player.setIdPlayer("7");
         player.setName("Carlos");
-        player.setFirstPlace(0);
-        player.setSecondPlace(0);
-        player.setThirdPlace(0);
-        player.setIdGame("5");
-        player.setIdDriver("7");
+        player.setCar("5");
+        player.setKilometer(2);
 
         when(repositoryPlayer.save(Mockito.any(Player.class))).thenReturn(Mono.just(player));
 
@@ -41,4 +37,5 @@ class UseCaseCreatePlayerTest {
 
         Assertions.assertEquals(response.block(), playerDTO);
     }
+
 }

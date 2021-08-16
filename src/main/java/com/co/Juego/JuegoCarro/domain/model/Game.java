@@ -17,6 +17,5 @@ public class Game {
     @Id
     private String idGame;
 
-    private String idTrack;
 
 }

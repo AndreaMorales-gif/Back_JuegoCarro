@@ -14,7 +14,6 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 @Configuration
 public class RouterCreatePlayer {
-
     @Bean
     public RouterFunction<ServerResponse> createPlayer(UseCaseCreatePlayer useCaseCreatePlayer){
         return route(POST("/createPlayer").and(accept(MediaType.APPLICATION_JSON)),

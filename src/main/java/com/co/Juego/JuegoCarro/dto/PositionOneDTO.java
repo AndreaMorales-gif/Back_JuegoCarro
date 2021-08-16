@@ -10,14 +10,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Document
-public class PodiumDTO {
+public class PositionOneDTO {
 
     @Id
-    private String idPodium;
+    private String idPositionOne;
 
-    private String firstPlace;
-    private String secondPlace;
-    private String thirdPlace;
-
-
+    private String lane;
+    private String namePositionOne;
+    private String carPositionOne;
+    private Integer kilometerPositionOne;
 }

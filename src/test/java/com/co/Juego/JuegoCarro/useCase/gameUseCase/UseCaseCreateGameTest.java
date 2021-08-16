@@ -25,10 +25,9 @@ class UseCaseCreateGameTest {
 
     @Test
     void crearGame(){
-        var gameDTO = new GameDTO("5","8");
+        var gameDTO = new GameDTO("5");
         var game = new Game();
         game.setIdGame("5");
-        game.setIdTrack("8");
 
         when(repositoryGame.save(Mockito.any(Game.class))).thenReturn(Mono.just(game));
 

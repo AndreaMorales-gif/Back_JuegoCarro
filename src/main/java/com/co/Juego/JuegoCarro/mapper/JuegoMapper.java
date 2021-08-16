@@ -13,15 +13,13 @@ public class JuegoMapper {
         return updateGame -> {
             Game game = new Game();
             game.setIdGame(id);
-            game.setIdTrack(updateGame.getIdTrack());
             return game;
         };
     }
 
     public Function<Game,GameDTO> mapperToGameDTO(){
         return game -> new GameDTO(
-                game.getIdGame(),
-                game.getIdTrack()
+                game.getIdGame()
         );
     }
 }

@@ -17,7 +17,6 @@ public class Podium {
     @Id
     private String idPodium;
 
-    private String idGame;
     private String firstPlace;
     private String secondPlace;
     private String thirdPlace;

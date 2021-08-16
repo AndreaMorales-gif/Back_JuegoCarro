@@ -14,5 +14,4 @@ public class GameDTO {
     @Id
     private String idGame;;
 
-    private String idTrack;
 }

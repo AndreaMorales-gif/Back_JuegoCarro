@@ -12,13 +12,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Document
-public class Player {
+public class PositionOne {
 
     @Id
-    private String idPlayer;
+    private String idPositionOne;
 
-    private String name;
-    private String car;
-    private Integer kilometer;
+    private String lane;
+    private String namePositionOne;
+    private String carPositionOne;
+    private Integer kilometerPositionOne;
 }
-

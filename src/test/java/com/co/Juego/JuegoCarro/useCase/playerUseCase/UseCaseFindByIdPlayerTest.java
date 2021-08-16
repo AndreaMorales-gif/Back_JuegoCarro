@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class UseCaseFindByIdPlayerTest {
-
+/*
     @SpyBean
     UseCaseFindByIdPlayer useCaseFindByIdPlayer;
 
@@ -39,5 +39,5 @@ class UseCaseFindByIdPlayerTest {
         var response = useCaseFindByIdPlayer.findByIdPlayer(playerDTO.getIdPlayer());
 
         Assertions.assertEquals(response.block().getIdPlayer(), "7");
-    }
+    }*/
 }

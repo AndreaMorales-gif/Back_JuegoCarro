@@ -8,11 +8,11 @@ import java.util.function.Function;
 
 @Component
 public class PodioMapper {
+
     public Function<PodiumDTO, Podium> mapperToPodium(String id){
         return updatePodium -> {
             Podium podium = new Podium();
             podium.setIdPodium(id);
-            podium.setIdGame(updatePodium.getIdGame());
             podium.setFirstPlace(updatePodium.getFirstPlace());
             podium.setSecondPlace(updatePodium.getSecondPlace());
             podium.setThirdPlace(updatePodium.getThirdPlace());
@@ -23,7 +23,6 @@ public class PodioMapper {
     public Function<Podium,PodiumDTO> mapperToPodiumDTO(){
         return podium -> new PodiumDTO(
                 podium.getIdPodium(),
-                podium.getIdGame(),
                 podium.getFirstPlace(),
                 podium.getSecondPlace(),
                 podium.getThirdPlace()

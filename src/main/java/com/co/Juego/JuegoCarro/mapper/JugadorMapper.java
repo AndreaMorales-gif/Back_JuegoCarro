@@ -14,11 +14,8 @@ public class JugadorMapper {
             var player = new Player();
             player.setIdPlayer(id);
             player.setName(updatePlayer.getName());
-            player.setFirstPlace(updatePlayer.getFirstPlace());
-            player.setSecondPlace(updatePlayer.getSecondPlace());
-            player.setThirdPlace(updatePlayer.getThirdPlace());
-            player.setIdGame(updatePlayer.getIdGame());
-            player.setIdDriver(updatePlayer.getIdDriver());
+            player.setCar(updatePlayer.getCar());
+            player.setKilometer(updatePlayer.getKilometer());
             return player;
         };
     }
@@ -27,11 +24,8 @@ public class JugadorMapper {
         return player -> new PlayerDTO(
                 player.getIdPlayer(),
                 player.getName(),
-                player.getFirstPlace(),
-                player.getSecondPlace(),
-                player.getThirdPlace(),
-                player.getIdGame(),
-                player.getIdDriver()
+                player.getCar(),
+                player.getKilometer()
         );
     }
 }

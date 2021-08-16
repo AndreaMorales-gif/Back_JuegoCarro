@@ -5,7 +5,6 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.function.Predicate;
 
 @Setter
 @Data
@@ -18,10 +17,6 @@ public class PlayerDTO  {
     private String idPlayer;
 
     private String name;
-    private Integer firstPlace;
-    private Integer secondPlace;
-    private Integer thirdPlace;
-    private String idGame;
-    private String idDriver;
-
+    private String car;
+    private Integer kilometer;
 }
