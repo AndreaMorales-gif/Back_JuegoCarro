@@ -26,8 +26,7 @@ class UseCaseCreateGameTest {
     @Test
     void crearGame(){
         var gameDTO = new GameDTO("5");
-        var game = new Game();
-        game.setIdGame("5");
+        var game = new Game("5");
 
         when(repositoryGame.save(Mockito.any(Game.class))).thenReturn(Mono.just(game));
 

@@ -1,9 +1,6 @@
 package com.co.Juego.JuegoCarro.router.routerPositionThree;
 
-import com.co.Juego.JuegoCarro.dto.PlayerDTO;
 import com.co.Juego.JuegoCarro.dto.PositionThreeDTO;
-import com.co.Juego.JuegoCarro.useCase.playerUseCase.UseCaseFindByIdPlayer;
-import com.co.Juego.JuegoCarro.useCase.positionThreeUseCase.UseCaseCreatePositionThree;
 import com.co.Juego.JuegoCarro.useCase.positionThreeUseCase.UseCaseFindAllPositionThree;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

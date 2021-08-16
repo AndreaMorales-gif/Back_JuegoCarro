@@ -1,8 +1,6 @@
 package com.co.Juego.JuegoCarro.mapper;
 
-import com.co.Juego.JuegoCarro.domain.model.PositionOne;
 import com.co.Juego.JuegoCarro.domain.model.PositionThree;
-import com.co.Juego.JuegoCarro.dto.PositionOneDTO;
 import com.co.Juego.JuegoCarro.dto.PositionThreeDTO;
 import org.springframework.stereotype.Component;
 

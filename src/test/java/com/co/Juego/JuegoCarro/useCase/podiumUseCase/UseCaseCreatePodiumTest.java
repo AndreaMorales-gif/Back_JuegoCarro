@@ -25,11 +25,8 @@ class UseCaseCreatePodiumTest {
     @Test
     void createPodium(){
         var podiumDTO = new PodiumDTO("7","Andres","Carlos","Pablo");
-        var podium = new Podium();
-        podium.setIdPodium("7");
-        podium.setFirstPlace("Andres");
-        podium.setSecondPlace("Carlos");
-        podium.setThirdPlace("Pablo");
+        var podium = new Podium("7","Andres","Carlos","Pablo");
+
 
         when(repositoryPodium.save(Mockito.any(Podium.class))).thenReturn(Mono.just(podium));
 

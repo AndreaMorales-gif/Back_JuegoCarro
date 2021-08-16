@@ -25,11 +25,7 @@ class UseCaseCreatePlayerTest {
     @Test
     void createPlayer(){
         var playerDTO = new PlayerDTO("7", "Carlos",  "5",2 );
-        var player = new Player();
-        player.setIdPlayer("7");
-        player.setName("Carlos");
-        player.setCar("5");
-        player.setKilometer(2);
+        var player = new Player("7", "Carlos",  "5",2);
 
         when(repositoryPlayer.save(Mockito.any(Player.class))).thenReturn(Mono.just(player));
 

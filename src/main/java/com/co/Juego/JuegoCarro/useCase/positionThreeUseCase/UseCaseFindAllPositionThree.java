@@ -24,4 +24,5 @@ public class UseCaseFindAllPositionThree {
         return repositoryPositionThree.findAll()
                 .map(posicionTresMapper.mapperToPositionThreeDTO());
     }
+
 }
