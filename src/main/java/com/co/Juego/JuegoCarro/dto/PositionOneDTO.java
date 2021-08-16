@@ -4,12 +4,10 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Setter
-@Getter
+
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Document
 public class PositionOneDTO {
 
     @Id
