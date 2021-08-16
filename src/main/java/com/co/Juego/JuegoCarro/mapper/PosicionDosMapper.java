@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class PosicionDosMapper {
     public Function<PositionTwoDTO, PositionTwo> mapperToPositionTwo(String id){
         return updatePositionTwo -> {
-            var positionTwo = new PositionTwo();
+            PositionTwo positionTwo = new PositionTwo();
             positionTwo.setIdPositionTwo(id);
             positionTwo.setLane(updatePositionTwo.getLane());
             positionTwo.setNamePositionTwo(updatePositionTwo.getNamePositionTwo());

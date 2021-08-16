@@ -24,13 +24,13 @@ class UseCaseCreatePodiumTest {
 
     @Test
     void createPodium(){
-        var podiumDTO = new PodiumDTO("7","Andres","Carlos","Pablo");
-        var podium = new Podium("7","Andres","Carlos","Pablo");
+        PodiumDTO podiumDTO = new PodiumDTO("7","Andres","Carlos","Pablo");
+        Podium podium = new Podium("7","Andres","Carlos","Pablo");
 
 
         when(repositoryPodium.save(Mockito.any(Podium.class))).thenReturn(Mono.just(podium));
 
-        var response = useCaseCreatePodium.createPodium(podiumDTO);
+        Mono<PodiumDTO> response = useCaseCreatePodium.createPodium(podiumDTO);
 
         Assertions.assertEquals(response.block(), podiumDTO);
     }

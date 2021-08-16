@@ -11,7 +11,7 @@ public class JugadorMapper {
 
     public Function<PlayerDTO, Player> mapperToPlayer(String id){
         return updatePlayer -> {
-            var player = new Player();
+            Player player = new Player();
             player.setIdPlayer(id);
             player.setName(updatePlayer.getName());
             player.setCar(updatePlayer.getCar());

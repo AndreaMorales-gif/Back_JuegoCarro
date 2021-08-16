@@ -27,7 +27,7 @@ class UseCaseFindAllPositionThreeTest {
 
         when(repositoryPositionThree.findAll()).thenReturn(Flux.just(positionThree));
 
-        var response = useCaseFindAllPositionThree.findByAllPositionThree();
+        Flux<PositionThreeDTO> response = useCaseFindAllPositionThree.findByAllPositionThree();
 
         Assertions.assertEquals(response.blockFirst(), positionThreeDTO);
     }

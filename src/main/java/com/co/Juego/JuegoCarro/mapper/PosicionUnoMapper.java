@@ -11,7 +11,7 @@ public class PosicionUnoMapper {
 
     public Function<PositionOneDTO, PositionOne> mapperToPositionOne(String id){
         return updatePositionOne -> {
-            var positionOne = new PositionOne();
+            PositionOne positionOne = new PositionOne();
             positionOne.setIdPositionOne(id);
             positionOne.setLane(updatePositionOne.getLane());
             positionOne.setNamePositionOne(updatePositionOne.getNamePositionOne());

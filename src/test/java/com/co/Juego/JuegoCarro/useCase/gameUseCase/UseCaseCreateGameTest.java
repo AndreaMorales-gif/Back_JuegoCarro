@@ -25,12 +25,12 @@ class UseCaseCreateGameTest {
 
     @Test
     void crearGame(){
-        var gameDTO = new GameDTO("5");
-        var game = new Game("5");
+        GameDTO gameDTO = new GameDTO("5");
+        Game game = new Game("5");
 
         when(repositoryGame.save(Mockito.any(Game.class))).thenReturn(Mono.just(game));
 
-        var response = useCaseCreateGame.createGame(gameDTO);
+        Mono<GameDTO> response = useCaseCreateGame.createGame(gameDTO);
 
         Assertions.assertEquals(response.block(), gameDTO);
     }

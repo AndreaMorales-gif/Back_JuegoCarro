@@ -11,7 +11,7 @@ public class PosicionTresMapper {
 
     public Function<PositionThreeDTO, PositionThree> mapperToPositionThree(String id){
         return updatePositionThree -> {
-            var positionThree = new PositionThree();
+            PositionThree positionThree = new PositionThree();
             positionThree.setIdPositionThree(id);
             positionThree.setLane(updatePositionThree.getLane());
             positionThree.setNamePositionThree(updatePositionThree.getNamePositionThree());
