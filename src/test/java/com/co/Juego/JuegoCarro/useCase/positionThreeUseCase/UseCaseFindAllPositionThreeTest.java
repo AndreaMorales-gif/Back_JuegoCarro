@@ -22,8 +22,8 @@ class UseCaseFindAllPositionThreeTest {
 
     @Test
     void findAllPosition3(){
-        var positionThreeDTO = new PositionThreeDTO("7","2","Carlos","5",2);
-        var positionThree = new PositionThree("7","2","Carlos","5",2);
+        PositionThreeDTO positionThreeDTO = new PositionThreeDTO("7","2","Carlos","5",2);
+        PositionThree positionThree = new PositionThree("7","2","Carlos","5",2);
 
         when(repositoryPositionThree.findAll()).thenReturn(Flux.just(positionThree));
 

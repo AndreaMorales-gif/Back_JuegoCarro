@@ -1,6 +1,7 @@
 package com.co.Juego.JuegoCarro.useCase.positionOneUseCase;
 
 import com.co.Juego.JuegoCarro.domain.model.PositionOne;
+import com.co.Juego.JuegoCarro.dto.PodiumDTO;
 import com.co.Juego.JuegoCarro.dto.PositionOneDTO;
 import com.co.Juego.JuegoCarro.repositories.RepositoryPositionOne;
 import org.junit.jupiter.api.Assertions;
@@ -28,7 +29,7 @@ class UseCaseCreatePositionOneTest {
 
         when(repositoryPositionOne.save(Mockito.any(PositionOne.class))).thenReturn(Mono.just(positionOne));
 
-        var response = useCaseCreatePositionOne.createPositionOne(positionOneDTO);
+        Mono<PositionOneDTO> response = useCaseCreatePositionOne.createPositionOne(positionOneDTO);
 
         Assertions.assertEquals(response.block(), positionOneDTO);
     }

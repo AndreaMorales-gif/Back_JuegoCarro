@@ -25,12 +25,12 @@ class UseCaseCreatePositionTwoTest {
 
     @Test
     void createPosition2(){
-        var positionTwoDTO = new PositionTwoDTO("7","2","Carlos","5",2);
-        var positionTwo = new PositionTwo("7","2","Carlos","5",2);
+        PositionTwoDTO positionTwoDTO = new PositionTwoDTO("7","2","Carlos","5",2);
+        PositionTwo positionTwo = new PositionTwo("7","2","Carlos","5",2);
 
         when(repositoryPositionTwo.save(Mockito.any(PositionTwo.class))).thenReturn(Mono.just(positionTwo));
 
-        var response = useCaseCreatePositionTwo.createPositionTwo(positionTwoDTO);
+        Mono<PositionTwoDTO> response = useCaseCreatePositionTwo.createPositionTwo(positionTwoDTO);
 
         Assertions.assertEquals(response.block(), positionTwoDTO);
     }

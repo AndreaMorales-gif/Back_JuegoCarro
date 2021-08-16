@@ -23,12 +23,12 @@ class UseCaseFindAllPositionTwoTest {
 
     @Test
     void findAllPosition2(){
-        var positionTwoDTO = new PositionTwoDTO("7","2","Carlos","5",2);
-        var positionTwo = new PositionTwo("7","2","Carlos","5",2);
+        PositionTwoDTO positionTwoDTO = new PositionTwoDTO("7","2","Carlos","5",2);
+        PositionTwo positionTwo = new PositionTwo("7","2","Carlos","5",2);
 
         when(repositoryPositionTwo.findAll()).thenReturn(Flux.just(positionTwo));
 
-        var response = useCaseFindAllPositionTwo.findByAllPositionTwo();
+        Flux<PositionTwoDTO> response = useCaseFindAllPositionTwo.findByAllPositionTwo();
 
         Assertions.assertEquals(response.blockFirst(), positionTwoDTO);
     }
